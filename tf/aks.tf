@@ -82,12 +82,12 @@ resource "azurerm_kubernetes_cluster" "aks" {
     }
 }
 
-data "azurerm_azuread_service_principal" "akssp" {
+data "azuread_service_principal" "akssp" {
   application_id = "${var.client_id}"
 }
 
 resource "azurerm_role_assignment" "netcontribrole" {
   scope                = "${azurerm_subnet.subnet.id}"
   role_definition_name = "Network Contributor"
-  principal_id         = "${data.azurerm_azuread_service_principal.akssp.object_id}"
+  principal_id         = "${data.azuread_service_principal.akssp.object_id}"
 }
