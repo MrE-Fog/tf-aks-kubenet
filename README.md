@@ -55,6 +55,7 @@ Go to the `tf` directory:
 
 ```bash
 cd tf
+chmod +x *.sh
 ```
 
 *Optional: update the `variables.tf` and `aks.tf` files with desired values.*
