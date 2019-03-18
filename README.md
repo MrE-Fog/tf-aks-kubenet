@@ -60,6 +60,21 @@ chmod +x *.sh
 
 *Optional: update the `variables.tf` and `aks.tf` files with desired values.*
 
+With the following command we’ll create a new service principal and skip creating the default assignment, which allows the service principal to access resources under the current subscription.
+
+
+```bash
+$ az ad sp create-for-rbac --skip-assignment
+{
+“appId”: “xyzxyzxyzxyzxyzxyzxyzxyzxyzxyz”, → — service-principal
+“displayName”: “azure-cli-2019–02–23–11-xyz”,
+“name”: “http://azure-cli-2019-02-23-11-31-36",
+“password”: “xyzxyzxyzxyzxyzxyzxyzxyzxyzxyz”, → — client-secret
+“tenant”: “xyzxyzxyzxyzxyzxyzxyzxyzxyzxyz”
+}
+```bash
+
+
 Export the following environment variables for the service principal client id and client secret that should be used by the Azure Kubernetes Service cluster:
 
 ```bash
