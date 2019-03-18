@@ -63,7 +63,7 @@ chmod +x *.sh
 With the following command we’ll create a new service principal and skip creating the default assignment, which allows the service principal to access resources under the current subscription.
 
 
-```bash
+```hcl
 $ az ad sp create-for-rbac --skip-assignment
 {
 “appId”: “xyzxyzxyzxyzxyzxyzxyzxyzxyzxyz”, → — service-principal
@@ -72,7 +72,7 @@ $ az ad sp create-for-rbac --skip-assignment
 “password”: “xyzxyzxyzxyzxyzxyzxyzxyzxyzxyz”, → — client-secret
 “tenant”: “xyzxyzxyzxyzxyzxyzxyzxyzxyzxyz”
 }
-```bash
+```
 
 
 Export the following environment variables for the service principal client id and client secret that should be used by the Azure Kubernetes Service cluster:
